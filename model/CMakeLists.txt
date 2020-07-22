@@ -1,0 +1,6 @@
+set(target_name model)
+file(GLOB source_list *.hpp *.cpp)
+add_library(${target_name} SHARED ${source_list})
+target_compile_definitions(${target_name} PRIVATE DLL_EXPORT)
+target_link_libraries(${target_name} cmd)
+target_include_directories(${target_name} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
